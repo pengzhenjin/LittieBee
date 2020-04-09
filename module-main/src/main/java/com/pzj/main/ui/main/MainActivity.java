@@ -5,6 +5,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.pzj.common.base.BaseActivity;
 import com.pzj.main.R;
 import com.pzj.main.databinding.ActivityMainBinding;
+import com.pzj.main.viewmodel.MainViewModel;
 
 /**
  * @ClassName: MainActivity

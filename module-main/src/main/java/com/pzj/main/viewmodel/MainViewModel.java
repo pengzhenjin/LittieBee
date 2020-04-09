@@ -1,4 +1,4 @@
-package com.pzj.main.ui.main;
+package com.pzj.main.viewmodel;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
