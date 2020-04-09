@@ -1,0 +1,2 @@
+include ':app', ':common-base', ':module-main'
+rootProject.name='LittieBee'

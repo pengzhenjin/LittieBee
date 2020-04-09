@@ -1,0 +1,115 @@
+/**
+ * 全局统一配置文件
+ * 引用步骤：
+ *  1、在 project 目录下的 build.gradle 文件第一行添加 apply from : "config.gradle"
+ *  2、在各个 module 中用 implemetions rootProject.ext.dependencies['xxx'] 和 annotationProcessor rootProject.ext..dependencies['xxx']
+ */
+ext {
+
+    /**
+     * 标识每个业务组件是否可以单独运行，修改后需要同步才能生效
+     * true：表示每个业务组件可以单独运行
+     * false：表示每个业务组件不可以单独运行，而是以library的方式运行
+     */
+    isModule = false
+
+    /**
+     * android 基础配置
+     */
+    android = [
+            applicationId    : "com.pzj.littiebee",
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+            minSdkVersion    : 19,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    /**
+     * java 编译配置，即：JDK版本
+     */
+    compileOptions = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8,
+    ]
+
+    /**
+     * 第三方依赖库的版本号管理
+     */
+    versions = [
+            // androidx系列
+            appcompat           : "1.1.0",
+            constraintlayout    : "1.1.3",
+            coordinatorlayout   : "1.0.0",
+            lifecycle_extensions: "2.1.0",
+
+            // rx系列
+            rxjava2             : "2.2.12",
+            rxandroid           : "2.1.1",
+            rxpermissions       : "0.10.2",
+
+            // okhttp、retrofit网络
+            okhttp3             : "4.2.0",
+            retrofit2           : "2.6.1",
+
+            // glide图片加载
+            glide               : "4.9.0",
+
+            // json解析
+            gson                : "2.8.5",
+
+            // arouter组件通信
+            arouter_api         : "1.5.0",
+            arouter_compiler    : "1.2.2",
+
+            // greendao数据库
+            greendao            : "3.2.2",
+
+            // banner图片轮播
+            banner              : "1.4.10",
+    ]
+
+    /**
+     * 第三方依赖库配置
+     */
+    dependencies = [
+            // androidx系列
+            androidx_appcompat        : "androidx.appcompat:appcompat:$versions.appcompat",
+            androidx_constraintlayout : "androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
+            androidx_coordinatorlayout: "androidx.coordinatorlayout:coordinatorlayout:$versions.coordinatorlayout",
+            lifecycle_extensions      : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle_extensions",
+
+            // rx系列
+            rxjava                    : "io.reactivex.rxjava2:rxjava:$versions.rxjava2",
+            rxandroid                 : "io.reactivex.rxjava2:rxandroid:$versions.rxandroid",
+            rxpermissions             : "com.github.tbruyelle:rxpermissions:$versions.rxpermissions",
+
+            // okhttp、retrofit网络
+            okhttp                    : "com.squareup.okhttp3:okhttp:$versions.okhttp3",
+            okhttp_logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3",
+            retrofit                  : "com.squareup.retrofit2:retrofit:$versions.retrofit2",
+            converter_gson            : "com.squareup.retrofit2:converter-gson:$versions.retrofit2",
+            adapter_rxjava            : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit2",
+
+            // glide图片加载
+            glide                     : "com.github.bumptech.glide:glide:$versions.glide",
+            glide_compiler            : "com.github.bumptech.glide:compiler:$versions.glide",
+
+            // json解析
+            gson                      : "com.google.code.gson:gson:$versions.gson",
+
+            // arouter组件通信
+            "arouter_api"             : "com.alibaba:arouter-api:$versions.arouter_api",
+            "arouter_compiler"        : "com.alibaba:arouter-compiler:$versions.arouter_compiler",
+
+            // greendao数据库
+            greendao                  : "org.greenrobot:greendao:$versions.greendao",
+
+            // banner图片轮播
+            banner                    : "com.youth.banner:banner:$versions.banner",
+
+    ]
+}
+
+
